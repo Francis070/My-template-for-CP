@@ -67,52 +67,7 @@ bool comp(pi a, pi b){
 void solve()
 {
 	// your code goes here.
-	ll n, q;
-	cin>>n>>q;
-
-	vi v(n);
-	read(v);
-
-	ll x, y;
-	cin>>x>>y;
-
-	v[x] = y;
-	ll ans = 1;
 	
-	ll pre = 0;
-	ll last = -1;
-	for(ll i = 1; i<n; i++)
-	{
-		if(v[i] == v[i-1])
-		{
-			if(pre == 0)
-			{
-				if((i) > ans)
-					ans = i;
-
-				pre = i-1;
-			}
-
-			else
-			{
-				if(((i-1) - pre) > ans )
-					ans = i - 1 - pre;
-
-				pre = i-1;
-			}
-			last = i-1;
-		}
-	}
-
-	if(last != -1)
-	{
-		if(ans < ((n-1) - last))
-			ans = (n-1) - last;
-	}
-	else
-		ans = n;
-
-	cout<<ans<<endl;
 }
 
 int main()
